@@ -59,3 +59,41 @@ else{
     console.log(`${arr[i].name} doesn't report to anybody.`);
 }
 }
+
+if (word[0].charCodeAt() > 100) return ' ';
+  return word[word[0].charCodeAt() - 96];
+
+
+const decodeWords = function(words) {
+  return words
+    .split(' ')
+    .map(decode)
+    .join('');
+};
+
+console.log(decodeWords('craft block argon meter bells brown croon droop'));
+
+const obj = {
+	'a': 2,
+	'b': 3,
+	'c': 4,
+	'd': 5
+}
+
+function message(str) {
+  const words = str.split(' ');
+  const mapped = words.map(word => {
+    const firstLetter = word[0]
+    const letterNum = obj[firstLetter]
+
+    if (letterNum) {
+      return word[letterNum - 1];
+    } else {
+      return ' ';
+    }
+  })
+  return mapped.join('')
+}
+
+
+console.log(message('craft block argon meter bells brown croon droop'));
