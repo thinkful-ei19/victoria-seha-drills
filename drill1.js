@@ -45,3 +45,14 @@ var sampleObj = {
   bang: 'bang',
 };
 console.log(keyDeleter(sampleObj))
+
+function makeStudentReport(data){
+	const outcome = [];
+	for(let i = 0; i < data.length; i++){
+		const item = data[i];
+		outcome.push(`${item.name}: ${item.grade}`);
+	}
+    return outcome;
+}
+var data = {name: 'Johnny Robot', grade: 'C'};
+console.log(makeStudentReport(data));
